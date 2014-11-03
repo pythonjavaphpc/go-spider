@@ -1,7 +1,7 @@
 package main
 
 /*
-	by: macr0@vip.qq.com
+	by: macro
 
 conn.cfg:
 	url=http://www.qq.com/
