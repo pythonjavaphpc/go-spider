@@ -158,7 +158,7 @@ func webget(url, path, fname string) {
 	}
 
 	reqest.Header.Add("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8")
-	reqest.Header.Add("Accept-Encoding", "gzip, deflate")
+	//reqest.Header.Add("Accept-Encoding", "gzip, deflate")
 	reqest.Header.Add("Accept-Language", "zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3")
 	reqest.Header.Add("Connection", "keep-alive")
 	//reqest.Header.Add("Host", "login.sina.com.cn")
@@ -297,7 +297,7 @@ func httpSpider(Turl string, isTread bool) {
 	if err == nil {
 		reqest.Header.Set("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8")
 		reqest.Header.Set("Accept-Charset", "GBK,utf-8;q=0.7,*;q=0.3")
-		reqest.Header.Set("Accept-Encoding", "deflate,sdch")
+		//reqest.Header.Set("Accept-Encoding", "gzip,deflate,sdch")
 		reqest.Header.Set("Accept-Language", "zh-CN,zh;q=0.8")
 		reqest.Header.Set("Cache-Control", "max-age=0")
 		reqest.Header.Set("Connection", "keep-alive")
@@ -357,13 +357,16 @@ func httpSpider(Turl string, isTread bool) {
 						v = strings.Replace(v, "href=", "", 1)
 						v = strings.Replace(v, "src=", "", 1)
 						v = strings.Split(v, "#")[0]
+						if strings.HasPrefix(v, "//") {
+							v = "http:" + v
+						}
 						v_tmp := v
 						v = strings.Split(v, "?")[0]
 
 						isBlockde := false
 						for _, value := range blocks {
 							if value != "" {
-								if strings.Contains(v, value) {
+								if strings.Contains(v_tmp, value) {
 									isBlockde = true
 									break
 								}
@@ -371,16 +374,34 @@ func httpSpider(Turl string, isTread bool) {
 						}
 
 						if !isBlockde {
-							if (v != "") && (v != "/") && (v != "\\") && (v != "(") && (!strings.HasPrefix(v, "<")) && (!strings.HasPrefix(v, "mailto:")) && (!strings.HasPrefix(v, "data:")) && (!strings.HasPrefix(v, "#")) && (strings.ToLower(v) != "about:blank") && (!strings.HasPrefix(strings.ToLower(v), "javascript")) && (!strings.Contains(strings.ToLower(v), "&nbsp;")) && (!strings.Contains(strings.ToLower(v), "&gt;")) && (!strings.Contains(strings.ToLower(v), "&lt;")) && (strings.Count(v, "?") <= 1) && (!strings.HasPrefix(v, "//")) {
+							if (v != "") && (v != "/") && (v != "\\") && (v != "(") && (!strings.HasPrefix(v, "<")) && (!strings.HasPrefix(v, "mailto:")) && (!strings.HasPrefix(v, "data:")) && (!strings.HasPrefix(v, "#")) && (strings.ToLower(v) != "about:blank") && (!strings.HasPrefix(strings.ToLower(v), "javascript")) && (!strings.Contains(strings.ToLower(v_tmp), "&nbsp;")) && (!strings.Contains(strings.ToLower(v_tmp), "&amp;")) && (!strings.Contains(strings.ToLower(v_tmp), "&gt;")) && (!strings.Contains(strings.ToLower(v_tmp), "&lt;")) && (strings.Count(v_tmp, "?") <= 1) && (!strings.HasPrefix(v, "//")) {
 								if strings.HasPrefix(v, "/") {
 									v = webRoot + v
 									v_tmp = webRoot + v_tmp
 								} else {
 									if !strings.HasPrefix(v, "http") {
-										v = webRoot + "/" + v
-										v_tmp = webRoot + "/" + v_tmp
+										//fmt.Println("----"+webRoot, v, v_tmp)
+										thipath := strings.Split(Turl, "://")[1]
+										thipath = strings.Split(thipath, "?")[0]
+										thipath = strings.Split(thipath, "#")[0]
+										thipath = strings.Replace(thipath, "//", "/", -1)
+										tp := strings.Split(thipath, "/")
+										//fmt.Println("------------", len(tp), tp)
+										thipath = ""
+										if !strings.HasSuffix(thipath, "/") {
+											for i := 1; i < len(tp)-1; i++ {
+												thipath = thipath + tp[i] + "/"
+											}
+										} else {
+											for i := 1; i < len(tp); i++ {
+												thipath = thipath + tp[i] + "/"
+											}
+										}
+										v = webRoot + "/" + thipath + v
+										v_tmp = webRoot + "/" + thipath + v_tmp
 									}
 								}
+								//fmt.Println("----"+v, v_tmp)
 
 								if strings.HasPrefix(v, webRoot) || SMode == 1 {
 									addWebTree(v)
@@ -390,7 +411,7 @@ func httpSpider(Turl string, isTread bool) {
 											//ok
 										} else {
 
-											if !strings.Contains("js,jpg,ico,png,gif,css,swf,htc,rar,zip,doc", TTT[len(TTT)-1]) {
+											if !strings.Contains("js,txt,log,jpg,ico,png,gif,css,swf,htc,rar,zip,doc", TTT[len(TTT)-1]) {
 												scanD[v_tmp] = 100
 
 												fmt.Println(Thread_now, Thread_n, len(scanD), response.StatusCode, v_tmp)

@@ -1,15 +1,7 @@
 ------------------[WebTree]----------------------
-http://www.baidu.com
+www.baidu.com
 /
 +- www.baidu.com
-    +- gaoji
-    |   +- preferences.html
-    |   +- img
-    |   |   +- new.png
-    |   +- nsclickDomain
-    +- more
-    |   +- index.html
-    +- question
     +- img
     |   +- bd_logo1.png
     |   +- baidu_jgylogo3.gif
@@ -18,10 +10,6 @@ http://www.baidu.com
     |   +- sethelp
     |       +- index.html
     |       +- img
-    |           +- ie2.jpg
-    |           +- world_window2.jpg
-    |           +- bdb_02.png
-    |           +- bdb_04.png
     |           +- opera3.jpg
     |           +- safari1.jpg
     |           +- green_browser2.jpg
@@ -64,6 +52,10 @@ http://www.baidu.com
     |           +- kj_chromecj.gif
     |           +- world_jishu1.jpg
     |           +- bdb_03.png
+    |           +- ie2.jpg
+    |           +- world_window2.jpg
+    |           +- bdb_02.png
+    |           +- bdb_04.png
     +- duty
     |   +- ..
     |   |   +- home.html
@@ -96,81 +88,48 @@ http://www.baidu.com
     |           +- lib
     |           |   +- tangram-2.0.2.1.js
     |           +- common.js
-    |           +- sug_.js
     +- index
+    +- gaoji
+    |   +- preferences.html
+    |   +- img
+    |   |   +- new.png
+    |   +- nsclickDomain
+    +- more
+    |   +- index.html
+    +- question
 ----------------[UrlList]----------------------
-                 Len: 72
-http://www.baidu.com/question?prod_en=xiangce
-http://www.baidu.com/question?prod_en=mobilbaidu
-http://www.baidu.com/question?prod_en=im
-http://www.baidu.com/cache/sethelp/index.html
-http://www.baidu.com/duty/yinsiquan.html
-http://www.baidu.com/duty/cpro_url
-http://www.baidu.com/question?prod_en=music
-http://www.baidu.com/question?prod_en=hi
-http://www.baidu.com/question?prod_en=mobilinput
-http://www.baidu.com/question?prod_en=liulanqi
-http://www.baidu.com/question?prod_en=indices
-http://www.baidu.com/gaoji/preferences.html
-http://www.baidu.com/question?prod_en=test
-http://www.baidu.com/question?prod_en=light
-http://www.baidu.com/question?prod_en=player
-http://www.baidu.com/question
-http://www.baidu.com/question?prod_en=yueduqi
-http://www.baidu.com/question?prod_en=videobrowser
-http://www.baidu.com/question?prod_en=master
-http://www.baidu.com/question?prod_en=laws
-http://www.baidu.com/duty/
-http://www.baidu.com/duty/../home.html
-http://www.baidu.com/duty/index.html
-http://www.baidu.com/question?prod_en=collect
-http://www.baidu.com/question?prod_en=jingyan
-http://www.baidu.com/question?prod_en=anti
-http://www.baidu.com/question?prod_en=tollbar
+                 Len: 32
 http://www.baidu.com/duty/right.html
 http://www.baidu.com/duty/safe_control.html
 http://www.baidu.com/more/index.html
 http://www.baidu.com/index
-http://www.baidu.com/question?prod_en=lvyou
-http://www.baidu.com/question?prod_en=fanyi
-http://www.baidu.com/question?prod_en=tousu
+http://www.baidu.com/question?prod_en=wenku
 http://www.baidu.com/more/
 http://www.baidu.com/question?prod_en=webmaster
 http://www.baidu.com/question?prod_en=news
 http://www.baidu.com/question?prod_en=baike
-http://www.baidu.com/question?prod_en=skycn
-http://www.baidu.com/question?prod_en=dao
-http://www.baidu.com/question?prod_en=image
-http://www.baidu.com/question?prod_en=map
-http://www.baidu.com/search/jiqiao.html
-http://www.baidu.com/search/jubao.html
-http://www.baidu.com/question?prod_en=zhidao
-http://www.baidu.com/question?prod_en=search
-http://www.baidu.com/question?prod_en=data
-http://www.baidu.com/question?prod_en=coin
-http://www.baidu.com/gaoji/nsclickDomain
-http://www.baidu.com/question?prod_en=report
-http://www.baidu.com/question?prod_en=passport
-http://www.baidu.com
-http://www.baidu.com/duty/baozhan.html
-http://www.baidu.com/question?prod_en=video
-http://www.baidu.com/question?prod_en=mobils
-http://www.baidu.com/question?prod_en=hao123
-http://www.baidu.com/question?prod_en=wifi
-http://www.baidu.com/
-http://www.baidu.com/question?prod_en=yun
-http://www.baidu.com/question?prod_en=top
-http://www.baidu.com/question?prod_en=licai
-http://www.baidu.com/question?prod_en=wenku
-http://www.baidu.com/question?prod_en=mobilmap
-http://www.baidu.com/question?prod_en=shurufa
-http://www.baidu.com/question?prod_en=website
-http://www.baidu.com/question?prod_en=youxi
-http://www.baidu.com/question?prod_en=piao
-http://www.baidu.com/question?prod_en=patents
 http://www.baidu.com/duty/copyright.html
 http://www.baidu.com/question?prod_en=dict
 http://www.baidu.com/question?prod_en=tieba
-http://www.baidu.com/question?prod_en=olders
+http://www.baidu.com/question?prod_en=image
+http://www.baidu.com/question?prod_en=map
+http://www.baidu.com/cache/sethelp/index.html
+http://www.baidu.com/duty/yinsiquan.html
+http://www.baidu.com/search/jiqiao.html
+http://www.baidu.com/search/jubao.html
+http://www.baidu.com/duty/cpro_url
+http://www.baidu.com/question?prod_en=music
+http://www.baidu.com/question?prod_en=zhidao
+http://www.baidu.com/question?prod_en=hi
+http://www.baidu.com/gaoji/preferences.html
+http://www.baidu.com/gaoji/nsclickDomain
+http://www.baidu.com
+http://www.baidu.com/duty/baozhan.html
+http://www.baidu.com/question
+http://www.baidu.com/question?prod_en=video
+http://www.baidu.com/duty/
+http://www.baidu.com/
+http://www.baidu.com/duty/../home.html
+http://www.baidu.com/duty/index.html
 
 -----------------------------------------------
